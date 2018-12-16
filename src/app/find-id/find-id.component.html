@@ -1,0 +1,40 @@
+<div class="row" style="text-align: center; ">
+  <form class="form-inline" style="margin:auto; margin-top: 200px; height: 100px">
+    <label class="sr-only" for="inlineFormInputName2">Asset Id</label>
+    <input [(ngModel)]="assetId" type="text" name="something" class="form-control mb-2 mr-sm-2 form-control-lg" id="inlineFormInputName2"
+      placeholder="Asset Id" style="width: 500px; ">
+    <button (click)="FindId()" type="submit" class="btn btn-primary mb-2 form-control-lg">Submit</button>
+  </form>
+
+</div>
+<div class="row">
+    <div class="col-sm-2">
+
+    </div>
+
+    <div *ngIf="assetdetails" class="col-sm-8" >
+      <div class="card">
+          <div class="card-header">
+              <span style="color: red; font-size: 16pt">{{isScum}}</span>
+              <p>Terrorists addresses:</p>
+              <li *ngFor="let terror of addresses">{{terror}}</li>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{assetdetails.name}}</h5>
+            <p class="card-text"><i>{{assetdetails.description}}</i></p>
+          </div>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item"><b>Quantity:</b> {{assetdetails.quantity}}</li>
+              <li class="list-group-item"><b>issuer:</b> {{assetdetails.issuer}}</li>
+              <li class="list-group-item"><b>issueHeight:</b> {{assetdetails.issueHeight}}</li>
+            </ul>
+            <button (click)="SignTr()" type="submit" class="btn btn-primary mb-2 form-control-lg">Submit</button>
+        </div>
+    </div>
+
+    <div class="col-sm-2">
+
+      </div>
+
+
+  </div>
